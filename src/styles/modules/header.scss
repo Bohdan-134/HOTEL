@@ -1,0 +1,80 @@
+@import '../utils/main.utils.scss';
+.header {
+    height: 100vh;
+    background-color: $COLOR__BLUE;
+    padding-top: 20px;
+}
+
+.header-top {
+    .container {
+        @include flex(row, space-between, flex-end);
+    }
+}
+
+.logo-wrap {
+    @include flex(row, null, flex-end);
+    .logo-img {
+        margin-right: 9px;  
+        max-height: 46px;
+        svg {
+            &:nth-child(2) {
+                margin-left: -4px;
+            }
+            &:nth-child(3) {
+                margin-left: -4px;
+            }
+        }
+    }
+    .logo-text {
+        @include font(26px, 600, 20px, $COLOR__DARK-BLUE)
+    }
+}
+
+.header-navigation {
+    @include flex(row, null, center);
+    nav {
+        margin-right: 79px;
+        .header-navigation__list {
+            @include flex(row, null, center);
+            .header-navigation__item {
+                margin: 0px 22px;
+                a {
+                    font-family: 'Average Sans', sans-serif;
+                    position: relative;
+                    transition: .3s;
+                    @include font(18px, 400, 26px, $COLOR__BLACK-LITE);
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -7px;
+                        left: 50%;
+                        transform: translateX(-50%) scale(0, 1);
+                        width: 100%;
+                        height: 2px;
+                        background-color: $COLOR__DARK-BLUE;
+                        border-radius: 2px;
+                        transition: .3s;
+                    }
+                    &:hover {
+                        color: $COLOR__DARK-BLUE;
+                        &::before {
+                            transform: translateX(-50%) scale(1, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn-reservation {
+    width: 135px;
+    height: 40px;
+    background: $COLOR__DARK-BLUE;
+    box-shadow: 0px 4px 12px rgba(21, 21, 21, 0.15);
+    border-radius: 4px;
+    @include font(16px, 400, 26px, $COLOR__WHITE)
+}
+
+
+sdfsdf

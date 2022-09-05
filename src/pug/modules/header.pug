@@ -1,0 +1,52 @@
+header.header 
+    .header-top
+        .container 
+            a(href="/").logo-wrap 
+                .logo-img
+                    include ../../img/logo/logo-img1.svg
+                    include ../../img/logo/logo-img2.svg
+                    include ../../img/logo/logo-img3.svg
+                .logo-text HOTEL 
+            .header-navigation 
+                nav
+                    ul.header-navigation__list
+                        li.header-navigation__item
+                            a(href="#") Home
+                        li.header-navigation__item
+                            a(href="#") Branch
+                        li.header-navigation__item
+                            a(href="#") Search
+                        li.header-navigation__item
+                            a(href="#") About Us
+                        li.header-navigation__item
+                            a(href="#") Pages
+                        li.header-navigation__item
+                            a(href="#") Blog
+                button#btn-reservation.btn-reservation Reservation
+    .header-main 
+        .container
+            .header-content__left
+                h1.header-title Discover a hotel that defies a new dimension of luxury.
+                p.header-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                .header-content-btn-warp
+                    button#btn-get-started Get Started
+                    a(href="#")#btn-watch-video
+                        .btn-watch-video__img
+                            include ../../img/icons/play.svg
+                        .btn-watch-video__text Watch video
+            .header-content__right
+                .header-content__right-bg
+                    .header-content__right-info
+                        .header-content__right-info-img
+                            include ../../img/icons/payment.svg
+                        h4.header-content__right-info-title Payment
+                        p.header-content__right-info-text on onternet
+                    .header-slider__wrap 
+                        .heaader-slider__tag Market Static
+                        .heaader-slider__text Course overview
+                        ul.heaader-slider__list 
+                            li.heaader-slider__item
+                                include ../../img/header-slider/line-static.svg
+                                .percent-profit
+                                    span.percent-profit__num 15%
+                img(src="../../img/header/header-img.webp", alt="header-img")

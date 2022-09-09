@@ -25,7 +25,7 @@ const paths = {
         dist: 'dist/js/'
     },
     img: {
-        src: 'src/img/**/*.{png,svg,jpeg}',
+        src: 'src/img/**/*.{png,svg,jpeg,ico}',
         dist: 'dist/img/'
     },
     fonts: {

@@ -1,0 +1,17 @@
+@import '../utils/main.utils.scss';
+.copyright {
+    padding: 17px 0px;
+    background-color: #B1BED0;
+    .container {
+        @include flex(row, space-between, center);
+        .copyright-text-left {
+            font-family: 'Work Sans';
+            @include font(18px, 500, 18px, rgba(0, 0, 0, 0.42))
+        }
+        .copyright-text-right {
+            font-family: 'Open Sans';
+            letter-spacing: 0.02em;
+            @include font(14px, 400, 14px, rgba(0, 0, 0, 0.42));
+        }
+    }
+}

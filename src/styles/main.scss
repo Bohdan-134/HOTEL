@@ -1,2 +1,90 @@
 @import './utils/main.utils.scss';
+@import './modules/mobile-menu.scss';
 @import './modules/header.scss';
+@import './modules/check-availability.scss';
+@import './modules/populer-room.scss';
+@import './modules/our-services.scss';
+@import './modules/about-us.scss';
+@import './modules/our-history.scss';
+@import './modules/subscription.scss';
+@import './modules/footer.scss';
+@import './modules/copyright.scss';
+.modal-wrap {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 99;
+    background-color: #a6b5cba3;
+    animation: open-modal .7s both;
+    @include flex(row, center, center);
+    .modal {
+        position: relative;
+        animation: slide-top .7s .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+}
+
+.animation-close-modal {
+    animation: close-modal .7s .7s both;
+    .modal {
+        animation: slide-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+}
+
+// animation
+@keyframes open-modal {
+    0% {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes close-modal {
+    0% {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+    100% {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        bottom: -300px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        bottom: 0px;
+        opacity: 1;
+    }
+    100% {
+        bottom: -300px;
+        opacity: 0;
+    }
+}
+
+.title-text {
+    font-family: 'Open Sans';
+    text-align: center;
+    @include font(45px, 400, 55px, #353637);
+}
+
+.subtitle-text {
+    font-family: 'Average Sans';
+    text-align: center;
+    @include font(18px, 400, 28px, #959595);
+}

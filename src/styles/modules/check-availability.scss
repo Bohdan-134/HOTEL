@@ -1,0 +1,78 @@
+@import '../utils/main.utils.scss';
+.check-availability {
+    padding: 121px 0 118px;
+    .subtitle-text {
+        margin: 16px 0 46px;
+    }
+    .container {
+        height: 523px;
+        @include flex(row, null, center);
+    }
+}
+
+.check-availability__img-wrap {
+    height: inherit;
+    background-color: #B1BED0;
+    box-shadow: 0px 4px 79px 7px rgba(115, 115, 115, 0.12);
+    border-radius: 8px 0px 0px 8px;
+    @include flex(row, null, flex-end);
+}
+
+.check-availability__form {
+    position: relative;
+    height: inherit;
+    flex: 1;
+    background-color: #F6FCFA;
+    border-radius: 0px 8px 8px 0px;
+    @include flex(column, center, center);
+    svg {
+        position: absolute;
+        &:nth-child(2) {
+            top: -1px;
+            right: 38px;
+        }
+        &:nth-child(3) {
+            top: -1px;
+            right: 0px;
+        }
+        &:nth-child(4) {
+            top: 38px;
+            right: 38px;
+        }
+        &:nth-child(5) {
+            top: 38px;
+            right: 0px;
+        }
+    }
+    form {
+        .form-group {
+            margin-bottom: 30px;
+            span {
+                display: block;
+                font-family: 'Open Sans';
+                letter-spacing: 0.03em;
+                margin-bottom: 10px;
+                @include font(14px, 400, 14px, #222426);
+            }
+            input,
+            select {
+                width: 340px;
+                height: 50px;
+                font-family: 'Open Sans';
+                letter-spacing: 0.03em;
+                padding: 0 14px;
+                border: 1px solid #ABABAB;
+                border-radius: 2px;
+                @include font(16px, 400, 16px, #636461);
+            }
+            #check-availability {
+                border: 1.5px solid #596B86;
+                border-radius: 2px;
+                font-family: 'Open Sans';
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                @include font(14px, 400, 14px, #222426)
+            }
+        }
+    }
+}

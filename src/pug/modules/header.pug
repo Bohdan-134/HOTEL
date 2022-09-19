@@ -6,7 +6,9 @@ header.header
                     include ../../img/logo/logo-img1.svg
                     include ../../img/logo/logo-img2.svg
                     include ../../img/logo/logo-img3.svg
-                .logo-text HOTEL 
+                .logo-text HOTEL
+            button#mobile-menu-open
+                i.bx.bx-menu
             .header-navigation 
                 nav
                     ul.header-navigation__list
@@ -49,9 +51,21 @@ header.header
                         .heaader-slider__tag 
                             span Market Static
                         .heaader-slider__text Course overview
-                        ul.heaader-slider__list 
-                            li.heaader-slider__item
-                                include ../../img/header-slider/line-static.svg
-                                .percent-profit
-                                    span.percent-profit__num 15%
+                        .swiper.mySwiper
+                            .heaader-slider__list.swiper-wrapper 
+                                .heaader-slider__item.swiper-slide
+                                    include ../../img/header-slider/llline1.svg
+                                .heaader-slider__item.swiper-slide
+                                    include ../../img/header-slider/llline2.svg
+                                .heaader-slider__item.swiper-slide
+                                    include ../../img/header-slider/llline3.svg
+                                .heaader-slider__item.swiper-slide
+                                    include ../../img/header-slider/llline4.svg
+                                .heaader-slider__item.swiper-slide
+                                    include ../../img/header-slider/llline5.svg
+                                .heaader-slider__item.swiper-slide
+                                    include ../../img/header-slider/llline1.svg
+                                .heaader-slider__item.swiper-slide
+                                    include ../../img/header-slider/llline2.svg
+                            .swiper-pagination
                 img(src="../../img/header/header-img.webp", alt="header-img")

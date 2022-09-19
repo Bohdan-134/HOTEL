@@ -1,0 +1,13 @@
+@import '../utils/main.utils.scss';
+#mobile-menu {
+    .mobile-menu__list {
+        @include flex(column, null, center);
+        .mobile-menu__item {
+            margin: 20% 0;
+            a {
+                font-family: 'Average Sans', sans-serif;
+                @include font(25px, 400, 26px, #3D4550);
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+section.check-availability
+    h2.title-text Check Availability
+    p.subtitle-text It is a long established fact that a reader will be distracted <br> by the readable content of a page.
+    .container
+        .check-availability__img-wrap
+            img(src="../../img/check-availability/check-availability.webp", alt="img")
+        .check-availability__form
+            form(action="#")
+                .form-group 
+                    span CHECK-IN
+                    input(type="date")
+                .form-group 
+                    span CHECK-OUT
+                    input(type="date")
+                .form-group
+                    span GUESTS:
+                    select(name="guests")
+                        option(value="1 Room") 1 Room
+                        option(value="2 Room") 2 Room
+                        option(value="3 Room") 3 Room
+                        option(value="4 Room") 4 Room
+                        option(value="5 Room") 5 Room
+                button#check-availability CHECK AVAILABILITY
+            include ../../img/icons/check-availability__icon.svg
+            include ../../img/icons/check-availability__icon.svg
+            include ../../img/icons/check-availability__icon.svg
+            include ../../img/icons/check-availability__icon.svg
+            

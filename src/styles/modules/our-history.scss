@@ -1,0 +1,23 @@
+@import '../utils/main.utils.scss';
+.our-history {
+    .container {
+        height: 523px;
+        @include flex(row, space-between, center)
+    }
+}
+
+.our-history__text-content {
+    height: 100%;
+    padding: 85px 72px 85px 62px;
+    background-color: #F6FCFA;
+    border-radius: 6px 0px 0px 6px;
+    .our-history__text {
+        max-width: 400px;
+    }
+}
+
+.our-history__video {
+    flex: 1;
+    height: 100%;
+    background: url(../../img/our-history/our-history__bg.webp) no-repeat;
+}

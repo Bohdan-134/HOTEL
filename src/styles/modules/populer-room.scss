@@ -1,0 +1,47 @@
+@import '../utils/main.utils.scss';
+.populer-room {
+    margin-bottom: 130px;
+    .subtitle-text {
+        margin: 20px 0px 46px;
+    }
+}
+
+.populer-room-list {
+    @include flex(row, space-between, center);
+}
+
+.populer-room-item {
+    .populer-room-item__content {
+        padding: 24px 22px;
+        border: 1px solid #596B86;
+        .populer-room-item__title {
+            font-family: 'Open Sans';
+            @include font(24px, 400, 24px, #131313);
+        }
+        .populer-room-item__info {
+            margin: 19px 0px 14px;
+            @include flex(row, null, center);
+            li {
+                margin-right: 17px;
+                svg {
+                    margin-right: -1px;
+                }
+                span {
+                    font-family: 'Open Sans';
+                    letter-spacing: 0.02em;
+                    @include font(12px, 300, 12px, #727272);
+                }
+            }
+        }
+        .populer-room-item__price-wrap {
+            font-family: 'Open Sans';
+            @include font(18px, 300, 18px, #585858);
+            .price {
+                @include font(30px, 600, 30px, #384D6C);
+            }
+            i {
+                margin: 0px 5px;
+            }
+        }
+    }
+}

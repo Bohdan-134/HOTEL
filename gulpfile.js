@@ -21,7 +21,7 @@ const paths = {
         dist: 'dist/css'
     },
     scripts: {
-        src: 'src/scripts/**/*.js',
+        src: 'src/js/**/*.js',
         dist: 'dist/js/'
     },
     img: {
@@ -64,11 +64,6 @@ function styles() {
 function scripts() {
     return gulp
         .src(paths.scripts.src)
-        .pipe(
-            babel({
-                presets: ["@babel/env"],
-            })
-        )
         .pipe(jsmin())
         .pipe(gulp.dest(paths.scripts.dist))
         .pipe(browserSync.stream());

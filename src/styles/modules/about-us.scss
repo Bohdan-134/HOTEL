@@ -1,0 +1,38 @@
+@import '../utils/main.utils.scss';
+.about-us {
+    margin-bottom: 126px;
+    .container {}
+}
+
+.about-us__list {
+    @include flex(row, center, center);
+    .about-us__item {
+        position: relative;
+        padding: 0px 84px;
+        span {
+            font-family: 'Open Sans';
+            @include font(50px, 700, 55px, #596B86);
+        }
+        .about-us__text {
+            margin-top: 10px;
+            font-family: 'Average Sans';
+            letter-spacing: 0.02em;
+            @include font(18px, 400, 24px, #939393);
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            right: -0px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 54px;
+            width: 1.5px;
+            background-color: #C4C4C4;
+        }
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

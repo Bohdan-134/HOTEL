@@ -1,0 +1,72 @@
+// our-customers slider item
+
+mixin sliderItems(srcImg, title, subtitle, text)
+    .swiper-slide.our-customers__swiper-item
+        .our-customers-slide-item__avatar
+            img(src!=srcImg alt="avatar")
+        h4.our-customers-slide-item__title= title
+        span.our-customers-slide-item__subtitle= subtitle
+        p.our-customers-slide-item__text= text
+        img(src="../../img/our-customers/decor-img-xl.svg").decor-img-xl1.decor-img
+        img(src="../../img/our-customers/decor-img-xl.svg").decor-img-xl2.decor-img
+        img(src="../../img/our-customers/decor-img-xl.svg").decor-img-xl3.decor-img
+        img(src="../../img/our-customers/decor-img-xl.svg").decor-img-xl4.decor-img
+        img(src="../../img/our-customers/decor-img-xs.svg").decor-img-xs1.decor-img
+        img(src="../../img/our-customers/decor-img-xs.svg").decor-img-xs2.decor-img
+        img(src="../../img/our-customers/decor-img-xs.svg").decor-img-xs3.decor-img
+        img(src="../../img/our-customers/decor-img-xs.svg").decor-img-xs4.decor-img
+
+mixin ourServicesItem({title, text, srcSvg, className, anchorAos, delayAos})
+    li.our-services__item(class!=className data-aos="fade-up" data-aos-anchor= anchorAos data-aos-delay= delayAos, data-aos-offset="200")
+        .vanilla__wrap
+            h4.our-services__item-title= title
+            p.our-services__item-text= text
+            img(src=`../../img/icons/our-services__img${srcSvg}.svg` alt="img")
+
+mixin ourNewsSliderItem(srcImg, title, text)
+    .swiper-slide.our-news__swiper-item
+        .our-news-slide-item__img
+            img(src!=srcImg alt="img")
+        .our-news-slide-item__text-content
+            ul.our-news-slide-item__info-list
+                .our-news-slide-item__info-item
+                    img(src="../../img/icons/travel.svg")
+                    span.our-news-slide-item__info-text Travel
+                .our-news-slide-item__info-item
+                    img(src="../../img/icons/comment.svg")
+                    span.our-news-slide-item__info-text 2 Comment
+            h4.our-news-slide-item__title= title
+            p.our-news-slide-item__text= text
+            a(href="#").our-news-slide-item__read-more-btn
+                span Read More
+                img(src="../../img/icons/arrow-right.svg" alt="arrow") 
+
+mixin populerRoomItem(className, imgSrc, title, price, dataDelay, anchorAos)
+    li.populer-room-item(class=className data-aos="flip-left" data-aos-delay= dataDelay data-aos-anchor= anchorAos data-aos-offset="300")
+        .vanilla__wrap
+            .populer-room-item__img-wrap
+                img(src!=imgSrc, alt="roomImg")
+            .populer-room-item__content
+                h4.populer-room-item__title= title
+                ul.populer-room-item__info 
+                    li
+                        include ../../img/icons/pr-size.svg
+                        span 52 sqm
+                    li
+                        include ../../img/icons/pr-bed.svg
+                        span 2 Bed
+                    li
+                        include ../../img/icons/pr-bath.svg
+                        span 1 Bathroom
+                div.populer-room-item__price-wrap
+                    span.price= price
+                    i /
+                    span Night
+
+mixin aboutUsItem(className, spanPlus, text)
+    li.about-us__item
+        div
+            span(class!=className)
+            if spanPlus
+                span +
+        p.about-us__text= text

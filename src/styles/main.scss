@@ -6,9 +6,12 @@
 @import './modules/our-services.scss';
 @import './modules/about-us.scss';
 @import './modules/our-history.scss';
+@import './modules/our-customers.scss';
+@import './modules/our-news.scss';
 @import './modules/subscription.scss';
 @import './modules/footer.scss';
 @import './modules/copyright.scss';
+//--- MODAL ---
 .modal-wrap {
     position: fixed;
     top: 0px;
@@ -32,53 +35,75 @@
     }
 }
 
-// animation
-@keyframes open-modal {
-    0% {
-        opacity: 0;
-        backdrop-filter: blur(0px);
-    }
-    100% {
-        opacity: 1;
-        backdrop-filter: blur(10px);
-    }
-}
-
-@keyframes close-modal {
-    0% {
-        opacity: 1;
-        backdrop-filter: blur(10px);
-    }
-    100% {
-        opacity: 0;
-        backdrop-filter: blur(0px);
-    }
-}
-
-@keyframes slide-top {
-    0% {
-        bottom: -300px;
-        opacity: 0;
-    }
-    100% {
-        bottom: 0px;
-        opacity: 1;
+.btn-watch-video__wrap {
+    @include flex(row, null, center);
+    a {
+        margin-left: 54px;
+        @include flex(row, null, center);
+        .btn-watch-video__text {
+            margin-left: 11px;
+            letter-spacing: 0.02em;
+            transition: .2s;
+            @include font(16px, 400, 26px, #353637);
+        }
+        svg {
+            transition: .2s;
+        }
+        &:hover {
+            .btn-watch-video__text {
+                color: #435876;
+            }
+            svg {
+                fill: #435876;
+            }
+        }
     }
 }
 
-@keyframes slide-bottom {
-    0% {
-        bottom: 0px;
-        opacity: 1;
-    }
-    100% {
-        bottom: -300px;
-        opacity: 0;
+@media screen and (max-width: 950px) {
+    .btn-watch-video__wrap {
+        @include flex(row, center, center)
     }
 }
 
+@media screen and (max-width: 600px) {
+    .btn-watch-video__wrap {
+        @include flex(row, space-between, center);
+        a {
+            margin-left: 0px;
+        }
+    }
+}
+
+//--- FORM MESSAGE ---
+.messageForm__wrap {
+    padding: 20px 40px;
+    background-color: #fff;
+    border: 1px solid #597193;
+    @include flex(row, center, center);
+    .messageForm__text {
+        @include font(3vh, 400, 3vh, #597193)
+    }
+}
+
+//--- SWIPER PAGINATION ---
+.swiper-pagination {
+    position: absolute;
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 10px;
+        background-color: rgba(177, 190, 208, 0.66);
+        border-radius: 58px;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 36px;
+        height: 10px;
+        background-color: #597193;
+    }
+}
+
+//--- TEXT ---
 .title-text {
-    font-family: 'Open Sans';
     text-align: center;
     @include font(45px, 400, 55px, #353637);
 }
@@ -89,4 +114,25 @@
     @include font(18px, 400, 28px, #959595);
 }
 
-//vh
+.overhead {
+    font-family: 'Average Sans';
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    @include font(16px, 400, 16px, #597193);
+}
+
+@media screen and (max-width: 950px) {
+    .header-content__left .title-text {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .title-text {
+        @include font(30px, 400, 55px, #353637);
+    }
+    .subtitle-text {
+        font-size: 15px;
+        line-height: 20px;
+    }
+}

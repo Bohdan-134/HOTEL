@@ -1,62 +1,9 @@
+include ../mixin/mixin.pug
 section.populer-room
-    h2.title-text Our Most Populer Room
-    p.subtitle-text It is a long established fact that a reader will be distracted <br> by the readable content of a page.
+    h2.title-text(data-aos="fade-up") Our Most Populer Room
+    p.subtitle-text(data-aos="fade-up") It is a long established fact that a reader will be distracted <br> by the readable content of a page.
     .container 
         ul.populer-room-list
-            li.populer-room-item
-                .populer-room-item__img-wrap
-                    img(src="../../img/populer-room/item-img1.webp", alt="room1")
-                .populer-room-item__content
-                    h4.populer-room-item__title Deluxe Contrast Room
-                    ul.populer-room-item__info 
-                        li
-                            include ../../img/icons/pr-size.svg
-                            span 52 sqm
-                        li
-                            include ../../img/icons/pr-bed.svg
-                            span 2 Bed
-                        li
-                            include ../../img/icons/pr-bath.svg
-                            span 1 Bathroom
-                    div.populer-room-item__price-wrap
-                        span.price $200
-                        i /
-                        span Night
-            li.populer-room-item
-                .populer-room-item__img-wrap
-                    img(src="../../img/populer-room/item-img2.webp", alt="room2")
-                .populer-room-item__content
-                    h4.populer-room-item__title Luxery Twin Room
-                    ul.populer-room-item__info 
-                        li
-                            include ../../img/icons/pr-size.svg
-                            span 52 sqm
-                        li
-                            include ../../img/icons/pr-bed.svg
-                            span 2 Bed
-                        li
-                            include ../../img/icons/pr-bath.svg
-                            span 1 Bathroom
-                    div.populer-room-item__price-wrap
-                        span.price $250
-                        i /
-                        span Night
-            li.populer-room-item
-                .populer-room-item__img-wrap
-                    img(src="../../img/populer-room/item-img3.webp", alt="room3")
-                .populer-room-item__content
-                    h4.populer-room-item__title Luxery Twin Room
-                    ul.populer-room-item__info 
-                        li
-                            include ../../img/icons/pr-size.svg
-                            span 52 sqm
-                        li
-                            include ../../img/icons/pr-bed.svg
-                            span 2 Bed
-                        li
-                            include ../../img/icons/pr-bath.svg
-                            span 1 Bathroom
-                    div.populer-room-item__price-wrap
-                        span.price $280
-                        i /
-                        span Night
+            +populerRoomItem('populer-room-item1', '../../img/populer-room/item-img1.webp', 'Deluxe Contrast Room', '$200', '200', null)
+            +populerRoomItem('populer-room-item2', '../../img/populer-room/item-img2.webp', 'Luxery Twin Room', '$250', '500', '.populer-room-item1')
+            +populerRoomItem('populer-room-item3', '../../img/populer-room/item-img3.webp', 'Single Contrast Room', '$280', '800', '.populer-room-item2')

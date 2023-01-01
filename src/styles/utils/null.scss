@@ -10,11 +10,11 @@
 }
 
 ::-moz-selection {
-    background-color: rgba(112, 248, 202, 0.4784313725);
+    background-color: #EAEFF6;
 }
 
 ::selection {
-    background-color: rgba(112, 248, 202, 0.4784313725);
+    background-color: #EAEFF6;
 }
 
 *,
@@ -108,7 +108,10 @@ h6 {
     background: $COLOR__DARK-BLUE;
     box-shadow: 0px 4px 12px rgba(21, 21, 21, 0.15);
     border-radius: 4px;
-    @include font(16px, 300, 26px, $COLOR__WHITE)
+    @include font(16px, 300, 26px, $COLOR__WHITE);
+    &:hover {
+        background: #435876;
+    }
 }
 
 // media

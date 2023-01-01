@@ -1,39 +1,39 @@
-// swiper
+import './swiper/main.swiper.js'
+import './aos/aos.animation.js'
+import './module/check-form.js'
+import './vanilla/vanilla.js'
+import './gsap/gsap.animation.js'
 
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+export const modalContentErrorHtml = {
+    content: '<div class="modal"><div class="messageForm__wrap"><p class="messageForm__text">Oops! Something went wrong</p></div></div>'
+}
 
-let yourNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+// error
+const btn = document.querySelectorAll('.btn');
 
-const swiper = new Swiper(".mySwiper", {
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    paginationBulletRender: function(index, className) {
-        return '<span class="' + className + '">' + yourNames[index] + '</span>';
-    }
+btn.forEach(element => {
+    element.addEventListener('click', () => {
+        return openModal(modalContentErrorHtml.content)
+    })
 })
 
-swiper.slideNext();
-
-const swiperPpagination = document.querySelectorAll('.swiper-pagination-bullet');
-
-swiperPpagination.forEach((e, index) => {
-    e.innerHTML = yourNames[index]
-});
+// watch video
+const btnPlayVideo = document.querySelectorAll('.btn-play-video');
 
 const modalContentHTML = {
     watchVideo: '<div class="modal"><iframe width="700" height="400" src="https://www.youtube.com/embed/2oyvVhq48OA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
     mobileMenu: '<div class="modal" id="mobile-menu"><ul class="mobile-menu__list"><li class="mobile-menu__item"> <a href="#">Home</a></li><li class="mobile-menu__item"> <a href="#">Branch</a></li><li class="mobile-menu__item"> <a href="#">Search</a></li><li class="mobile-menu__item"> <a href="#">About Us</a></li><li class="mobile-menu__item"> <a href="#">Pages</a></li><li class="mobile-menu__item"> <a href="#">Blog</a></li></ul></div>',
 }
 
-// watch video
+btnPlayVideo.forEach(elem => {
+    elem.addEventListener('click', function(e) {
+        e.preventDefault();
+        return openModal(modalContentHTML.watchVideo)
+    })
+})
 
-const btnWatchVideo = document.getElementById('btn-watch-video');
-
-btnWatchVideo.addEventListener('click', () => openModal(modalContentHTML.watchVideo));
-
-function openModal(elem) {
+// --- MODAL ---
+export function openModal(elem) {
     const wrapModal = document.createElement('div');
     wrapModal.classList.add('modal-wrap');
     wrapModal.innerHTML = elem;
@@ -41,7 +41,7 @@ function openModal(elem) {
     wrapModal.addEventListener('click', closeModal)
 }
 
-function closeModal(e) {
+export function closeModal(e) {
     const modalWrap = document.querySelector('.modal-wrap');
     const modal = document.querySelector('div.modal');
     const click = e.composedPath().includes(modal);
@@ -58,13 +58,3 @@ function closeModal(e) {
 const btnOpenMenu = document.getElementById('mobile-menu-open');
 
 btnOpenMenu.addEventListener('click', () => openModal(modalContentHTML.mobileMenu));
-
-//vh
-
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-});

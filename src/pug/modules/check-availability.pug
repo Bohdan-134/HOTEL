@@ -1,28 +1,29 @@
 section.check-availability
-    h2.title-text Check Availability
-    p.subtitle-text It is a long established fact that a reader will be distracted <br> by the readable content of a page.
-    .container
+    h2.title-text(data-aos="fade-up") Check Availability
+    p.subtitle-text(data-aos="fade-up") It is a long established fact that a reader will be distracted <br> by the readable content of a page.
+    .container(data-aos="fade-up")
         .check-availability__img-wrap
             img(src="../../img/check-availability/check-availability.webp", alt="img")
         .check-availability__form
-            form(action="#")
-                .form-group 
+            form(action="#").form-check
+                .form-group(data-aos="fade-up")
                     span CHECK-IN
-                    input(type="date")
-                .form-group 
+                    input(type="date").input-check-in
+                .form-group(data-aos="fade-up")
                     span CHECK-OUT
-                    input(type="date")
-                .form-group
+                    input(type="date").input-check-out
+                .form-group(data-aos="fade-up")
                     span GUESTS:
-                    select(name="guests")
+                    select(name="guests").select-check
                         option(value="1 Room") 1 Room
                         option(value="2 Room") 2 Room
                         option(value="3 Room") 3 Room
                         option(value="4 Room") 4 Room
                         option(value="5 Room") 5 Room
-                button#check-availability CHECK AVAILABILITY
+                button#check-availability(data-aos="fade-up" type="submit") CHECK AVAILABILITY
             include ../../img/icons/check-availability__icon.svg
             include ../../img/icons/check-availability__icon.svg
             include ../../img/icons/check-availability__icon.svg
             include ../../img/icons/check-availability__icon.svg
+            span.check-availability__err
             

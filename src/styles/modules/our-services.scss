@@ -1,15 +1,11 @@
 @import '../utils/main.utils.scss';
 .our-services {
     margin-bottom: 88px;
-    .our-services__overhead {
-        font-family: 'Average Sans';
-        text-transform: uppercase;
-        letter-spacing: 0.26em;
+    .overhead {
         text-align: center;
-        @include font(16px, 400, 24px, #597193);
     }
     .title-text {
-        margin: 19px 0 44px;
+        margin: 22px 0 44px;
     }
 }
 
@@ -17,27 +13,50 @@
     flex-wrap: wrap;
     @include flex(row, space-between, null);
     .our-services__item {
-        position: relative;
-        width: 350px;
-        height: 158px;
-        border: 1px solid #596B86;
-        border-radius: 2px;
         margin-bottom: 30px;
-        padding: 0px 31px;
-        .our-services__item-title {
-            margin: 41px 0 16px;
-            font-family: 'Open Sans';
-            @include font(24px, 400, 24px, #131313);
+        .vanilla__wrap {
+            position: relative;
+            width: 350px;
+            height: 158px;
+            border: 1px solid #596B86;
+            border-radius: 2px;
+            padding: 0px 31px;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            transition: .2s;
+            .our-services__item-title {
+                margin: 41px 0 16px;
+                font-family: 'Open Sans';
+                @include font(24px, 400, 24px, #131313);
+            }
+            .our-services__item-text {
+                font-family: 'Average Sans';
+                letter-spacing: 0.02em;
+                @include font(14px, 400, 24px, #9B9B9B)
+            }
+            img {
+                position: absolute;
+                top: 19px;
+                right: 32px;
+                transform: translateZ(40px);
+            }
         }
-        .our-services__item-text {
-            font-family: 'Average Sans';
-            letter-spacing: 0.02em;
-            @include font(14px, 400, 24px, #9B9B9B)
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .our-services__list {
+        @include flex(row, center, null);
+        .our-services__item {
+            margin: 0px 20px 30px 20px;
         }
-        img {
-            position: absolute;
-            top: 19px;
-            right: 32px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .our-services {
+        .title-text {
+            margin: 0px 0px 30px;
         }
     }
 }

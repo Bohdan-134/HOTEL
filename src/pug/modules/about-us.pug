@@ -1,15 +1,9 @@
-section.about-us 
+include ../mixin/mixin.pug
+
+section.about-us
     .container
         ul.about-us__list
-            li.about-us__item
-                span.room 302 +
-                p.about-us__text Room & Suites
-            li.about-us__item
-                span.restaurant 25
-                p.about-us__text Restaurant
-            li.about-us__item
-                span.exceptional-food 510+
-                p.about-us__text Exceptional Food
-            li.about-us__item
-                span.destination 65
-                p.about-us__text Destination
+            +aboutUsItem('room', true, 'Room & Suites')
+            +aboutUsItem('restaurant', true, 'Restaurant')
+            +aboutUsItem('exceptional-food', true, 'Exceptional Food')
+            +aboutUsItem('destination', false, 'Destination')

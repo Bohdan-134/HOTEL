@@ -1,0 +1,77 @@
+@import './mixin.scss';
+//--- MODAL ---
+@keyframes open-modal {
+    0% {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes close-modal {
+    0% {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+    100% {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        bottom: -300px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        bottom: 0px;
+        opacity: 1;
+    }
+    100% {
+        bottom: &bottom;
+        opacity: 0;
+    }
+}
+
+//--- HEADER SLIDER ---
+@keyframes path-line {
+    0% {
+        stroke-dashoffset: 1005;
+        stroke-dasharray: 1005;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes circle-scale {
+    0% {
+        r: 0;
+    }
+    100% {
+        r: 25;
+    }
+}
+
+// --- START ANIMATION ---
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

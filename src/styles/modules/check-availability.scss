@@ -64,14 +64,103 @@
                 border: 1px solid #ABABAB;
                 border-radius: 2px;
                 @include font(16px, 400, 16px, #636461);
+                &:focus {
+                    border: 1px solid #597193;
+                }
             }
-            #check-availability {
-                border: 1.5px solid #596B86;
-                border-radius: 2px;
-                font-family: 'Open Sans';
-                letter-spacing: 0.02em;
-                text-transform: uppercase;
-                @include font(14px, 400, 14px, #222426)
+        }
+        #check-availability {
+            position: relative;
+            width: 100%;
+            padding: 17px 0px;
+            background-color: transparent;
+            border: 1.5px solid #596B86;
+            border-radius: 2px;
+            font-family: 'Open Sans';
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            transition: .3s;
+            @include font(14px, 400, 14px, #222426);
+            &:hover {
+                background-color: #597193;
+                color: #fff;
+            }
+        }
+    }
+    .check-availability__err {
+        max-width: 340px;
+        width: 100%;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include flex(row, center, center);
+        @include font(15px, 300, 15px, red);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .check-availability__img-wrap {
+        width: 55%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .check-availability__img-wrap {
+        img {
+            height: 75%;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .check-availability {
+        .container {
+            height: auto;
+            @include flex(column, center, center)
+        }
+    }
+    .check-availability__img-wrap {
+        border-radius: 10px 10px 0px 0px;
+        width: 100%;
+        img {
+            width: inherit;
+            height: auto;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+    .check-availability__form {
+        border-radius: 0px 0px 10px 10px;
+        width: 100%;
+        padding: 60px 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .check-availability {
+        padding: 50px 0;
+        .subtitle-text {
+            margin: 10px 0 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .check-availability__form {
+        padding: 20px;
+        svg {
+            display: none;
+        }
+        form {
+            width: 100%;
+            .form-group {
+                input,
+                select {
+                    width: 100%;
+                }
             }
         }
     }

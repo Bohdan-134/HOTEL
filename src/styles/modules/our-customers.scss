@@ -1,0 +1,165 @@
+@import '../utils/main.utils.scss';
+.our-customers {
+    margin-bottom: 155px;
+    .title-text {
+        text-align: left;
+        font-size: 40px;
+    }
+    .subtitle-text {
+        margin-top: 13px;
+        letter-spacing: 0.045em;
+        line-height: 26px;
+        text-align: left;
+    }
+    .container.container-our-customers__swiper {
+        position: relative;
+        .our-customers-swiper-pagination {
+            bottom: -29px;
+        }
+    }
+}
+
+.our-customers__swiper {
+    width: 100%;
+    height: 490px;
+    @include flex(row, null, center);
+    .our-customers__swiper-list {
+        .our-customers__swiper-item {
+            position: relative;
+            overflow: hidden;
+            padding: 50px 37px;
+            width: 350px;
+            height: 389px;
+            border-radius: 6px;
+            background-color: #F6FCFA;
+            transition: 1s;
+            .our-customers-slide-item__avatar {
+                position: relative;
+                overflow: hidden;
+                width: 83px;
+                height: 83px;
+                border-radius: 50%;
+                background-color: #FFF;
+                img {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            .our-customers-slide-item__title {
+                margin: 24px 0 7px;
+                font-family: 'Work Sans';
+                @include font(30px, 400, 30px, #101828);
+            }
+            .our-customers-slide-item__subtitle {
+                display: block;
+                margin-bottom: 30px;
+                font-family: 'Work Sans';
+                @include font(12px, 300, 12px, #606772);
+            }
+            .our-customers-slide-item__text {
+                font-family: 'Merriweather';
+                letter-spacing: 0.02em;
+                @include font(14px, 300, 26px, #6D7589);
+            }
+            .decor-img {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+            }
+        }
+        .our-customers__swiper-item.swiper-slide-active {
+            top: -30px;
+            background-color: rgba(113, 136, 170, 0.55);
+            box-shadow: 0px 10px 19px rgba(66, 66, 66, 0.2);
+            .our-customers-slide-item__title {
+                color: #fff;
+            }
+            .our-customers-slide-item__subtitle {
+                color: #fff;
+            }
+            .our-customers-slide-item__text {
+                color: #fff;
+            }
+            .decor-img-xl1 {
+                animation: slide-in-bl 0.5s .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+            .decor-img-xl2 {
+                animation: slide-in-bl 0.5s .4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+            .decor-img-xl3 {
+                animation: slide-in-bl 0.5s .3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+            .decor-img-xl4 {
+                animation: slide-in-bl 0.5s .2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+            .decor-img-xs1 {
+                animation: slide-in-bl 0.5s .6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+            .decor-img-xs2 {
+                animation: slide-in-bl 0.5s .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+            .decor-img-xs3 {
+                animation: slide-in-bl 0.5s .8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+            .decor-img-xs4 {
+                animation: slide-in-bl 0.5s .9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+        }
+    }
+    .swiper-backface-hidden .swiper-slide {
+        max-height: 389px;
+    }
+}
+
+.decor-img-xl1 {
+    bottom: 0px;
+    left: 0px;
+}
+
+.decor-img-xl2 {
+    bottom: 0px;
+    left: 72px;
+}
+
+.decor-img-xl3 {
+    bottom: 72px;
+    left: 0px;
+}
+
+.decor-img-xl4 {
+    bottom: 72px;
+    left: 72px;
+}
+
+.decor-img-xs1 {
+    top: 0px;
+    right: 0px;
+}
+
+.decor-img-xs2 {
+    top: 0px;
+    right: 28px;
+}
+
+.decor-img-xs3 {
+    top: 28px;
+    right: 0px;
+}
+
+.decor-img-xs4 {
+    top: 28px;
+    right: 28px;
+}
+
+@keyframes slide-in-bl {
+    0% {
+        transform: translateY(100px) translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+}

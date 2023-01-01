@@ -1,29 +1,55 @@
+include ../mixin/mixin.pug
+
 section.our-services
-    h6.our-services__overhead OUR SERVICES
-    h2.title-text Hotel Facilities
+    h6.overhead(data-aos="fade-up") OUR SERVICES
+    h2.title-text(data-aos="fade-up") Hotel Facilities
     .container
         ul.our-services__list
-            li.our-services__item
-                h4.our-services__item-title Pick up & Drop
-                h4.our-services__item-text It is a long established fact that a reader will be distracted by the readable content of a page.
-                img(src="../../img/icons/our-services__img1.svg", alt="img1") 
-            li.our-services__item
-                h4.our-services__item-title Parking Space
-                h4.our-services__item-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                img(src="../../img/icons/our-services__img2.svg", alt="img2")
-            li.our-services__item
-                h4.our-services__item-title Room Services
-                h4.our-services__item-text It is a long established fact that a reader will be distracted by the readable content of a page.
-                img(src="../../img/icons/our-services__img3.svg", alt="img3")
-            li.our-services__item
-                h4.our-services__item-title Swimming Pool
-                h4.our-services__item-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                img(src="../../img/icons/our-services__img4.svg", alt="img4")
-            li.our-services__item
-                h4.our-services__item-title Fibre Internet
-                h4.our-services__item-text It is a long established fact that a reader will be distracted by the readable content of a page.
-                img(src="../../img/icons/our-services__img5.svg", alt="img5")
-            li.our-services__item
-                h4.our-services__item-title Breakfast
-                h4.our-services__item-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                img(src="../../img/icons/our-services__img6.svg", alt="img6")
+            +ourServicesItem({
+                title: 'Pick up & Drop',
+                text: 'It is a long established fact that a reader will be distracted by the readable content of a page.',
+                srcSvg: 1,
+                className: 'our-services__item1',
+                anchorAos: null,
+                delayAos: 200
+            })
+            +ourServicesItem({
+                title: 'Parking Space',
+                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                srcSvg: 2,
+                className: 'our-services__item2',
+                anchorAos: '.our-services__item1',
+                delayAos: 500
+            })
+            +ourServicesItem({
+                title: 'Room Services',
+                text: 'It is a long established fact that a reader will be distracted by the readable content of a page.',
+                srcSvg: 3,
+                className: 'our-services__item3',
+                anchorAos: '.our-services__item2',
+                delayAos: 800
+            })
+            +ourServicesItem({
+                title: 'Swimming Pool',
+                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                srcSvg: 4,
+                className: 'our-services__item4',
+                anchorAos: '.our-services__item3',
+                delayAos: 1100
+            })
+            +ourServicesItem({
+                title: 'Fibre Internet',
+                text: 'It is a long established fact that a reader will be distracted by the readable content of a page.',
+                srcSvg: 5,
+                className: 'our-services__item5',
+                anchorAos: '.our-services__item4',
+                delayAos: 1400
+            })
+            +ourServicesItem({
+                title: 'Breakfast',
+                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                srcSvg: 6,
+                className: 'our-services__item6',
+                anchorAos: '.our-services__item5',
+                delayAos: 1700
+            })

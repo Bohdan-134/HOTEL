@@ -1,7 +1,6 @@
 @import '../utils/main.utils.scss';
 .about-us {
     margin-bottom: 126px;
-    .container {}
 }
 
 .about-us__list {
@@ -9,9 +8,14 @@
     .about-us__item {
         position: relative;
         padding: 0px 84px;
-        span {
+        div {
             font-family: 'Open Sans';
             @include font(50px, 700, 55px, #596B86);
+            span {
+                &:last-child {
+                    margin-left: 5px;
+                }
+            }
         }
         .about-us__text {
             margin-top: 10px;
@@ -33,6 +37,26 @@
             &::before {
                 display: none;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .about-us__list {
+        .about-us__item {
+            padding: 0 55px;
+            span {
+                font-size: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .about-us__list {
+        .about-us__item {
+            padding: 0 30px;
         }
     }
 }

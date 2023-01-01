@@ -68,7 +68,7 @@
 
 @media screen and (max-width: 600px) {
     .btn-watch-video__wrap {
-        @include flex(row, space-between, center);
+        @include flex(row, space-around, center);
         a {
             margin-left: 0px;
         }

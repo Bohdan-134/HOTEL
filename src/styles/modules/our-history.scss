@@ -78,13 +78,29 @@
 }
 
 @media screen and (max-width: 600px) {
+    .our-history {
+        margin-bottom: 35px;
+    }
     .our-history__text-content {
         padding: 45px 30px 55px 30px;
         .title-text {
             text-align: center;
         }
         .btn-watch-video__wrap {
-            width: 130px;
+            .btn-play-video {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .our-history__text-content {
+        padding: 35px 15px 35px;
+        .btn-watch-video__wrap {
+            .btn {
+                width: 130px;
+            }
         }
     }
 }

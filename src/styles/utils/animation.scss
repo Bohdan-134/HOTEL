@@ -75,3 +75,15 @@
         opacity: 1;
     }
 }
+
+// --- OUR CASTOMERS ---
+@keyframes slide-in-bl {
+    0% {
+        transform: translateY(100px) translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+}

@@ -11,10 +11,8 @@
         div {
             font-family: 'Open Sans';
             @include font(50px, 700, 55px, #596B86);
-            span {
-                &:last-child {
-                    margin-left: 5px;
-                }
+            .plus {
+                margin-left: 5px;
             }
         }
         .about-us__text {
@@ -45,11 +43,13 @@
     .about-us__list {
         .about-us__item {
             padding: 0 55px;
-            span {
-                font-size: 30px;
-                line-height: 30px;
-            }
         }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .about-us {
+        margin-bottom: 44px;
     }
 }
 
@@ -57,6 +57,56 @@
     .about-us__list {
         .about-us__item {
             padding: 0 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .about-us__list {
+        .about-us__item {
+            padding: 0px 20px;
+            div {
+                @include font(20px, 700, 20px, #596B86);
+            }
+            .about-us__text {
+                @include font(15px, 400, 15px, #939393);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .about-us {
+        .container {
+            max-width: 350px;
+            padding: 0px;
+        }
+    }
+    .about-us__list {
+        @include flex(column, center, center);
+        .about-us__item {
+            padding: 15px;
+            width: 100%;
+            @include flex(row-reverse, space-between, center);
+            div {
+                @include font(25px, 700, 25px, #596B86);
+            }
+            .about-us__text {
+                margin-top: 0px;
+                @include font(20px, 400, 20px, #939393);
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                right: auto;
+                top: auto;
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 1px;
+                width: 100%;
+                background-color: #C4C4C4;
+            }
         }
     }
 }

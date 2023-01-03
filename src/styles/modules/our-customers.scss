@@ -153,13 +153,20 @@
     right: 28px;
 }
 
-@keyframes slide-in-bl {
-    0% {
-        transform: translateY(100px) translateX(-100px);
-        opacity: 0;
+@media screen and (max-width: 1000px) {
+    .our-customers {
+        margin-bottom: 90px;
+        .container.container-our-customers__swiper {
+            .our-customers-swiper-pagination {
+                bottom: -10px;
+            }
+        }
     }
-    100% {
-        transform: translateY(0) translateX(0);
-        opacity: 1;
+    .our-customers__swiper {
+        .our-customers__swiper-list {
+            .our-customers__swiper-item.swiper-slide-active {
+                top: 0px;
+            }
+        }
     }
 }

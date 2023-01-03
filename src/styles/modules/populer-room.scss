@@ -59,6 +59,18 @@
     }
 }
 
+@media screen and (max-width: 650px) {
+    .populer-room {
+        margin-bottom: 70px;
+        .subtitle-text {
+            margin: 20px 0px;
+        }
+    }
+    .populer-room-item {
+        margin: 25px;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .populer-room {
         .subtitle-text {

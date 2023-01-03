@@ -1,7 +1,5 @@
 import { openModal, closeModal, modalContentErrorHtml } from '../main.js'
 
-
-
 const checkForm = document.querySelector('.form-check');
 const iCheckIn = document.querySelector('.input-check-in');
 const iCheckOut = document.querySelector('.input-check-out');
@@ -13,7 +11,7 @@ checkForm.addEventListener('submit', (e) => {
     if (errMessageWrap.innerHTML !== "") errMessageWrap.innerHTML = "";
     if (!iCheckIn.value) return checkFormErr(`Check-in field filled out incorrectly`);
     if (!iCheckOut.value) return checkFormErr(`Check-out field filled out incorrectly`);
-    openModal(modalContentFormCheckHtml.content);
+    openModal(modalContentErrorHtml.content);
 })
 
 function checkFormErr(message) {

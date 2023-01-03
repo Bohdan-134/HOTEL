@@ -357,7 +357,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-bottom: 100px;
         }
     }
     .header-content__left {
@@ -448,35 +447,10 @@
     }
 }
 
-@media screen and (max-width: 420px) {
-    body {
-        height: calc(var(--vh, 1vh) * 100);
-    }
-    .header {
-        max-height: none;
-        height: 100vh;
-    }
-    .header-content__left {
-        .header-title {
-            font-size: 40px;
-            line-height: 45px;
-        }
-        .header-text {
-            font-size: 20px;
-            line-height: 25px;
-            margin: 35px 0 50px;
-        }
-    }
-    .header-content-btn-warp,
-    .our-history__btn-wrap {
-        a {
-            margin-left: 20px;
-            @include flex(row, null, center);
-            .btn-watch-video__text {
-                margin-left: 11px;
-                letter-spacing: 0.02em;
-                @include font(16px, 400, 26px, #353637);
-            }
+@media screen and (max-width: 400px) {
+    .header-main {
+        .container {
+            padding: 0 15px;
         }
     }
 }

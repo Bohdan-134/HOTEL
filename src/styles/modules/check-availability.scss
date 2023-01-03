@@ -118,6 +118,7 @@
 
 @media screen and (max-width: 850px) {
     .check-availability {
+        padding: 70px 0;
         .container {
             height: auto;
             @include flex(column, center, center)

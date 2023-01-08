@@ -35,6 +35,29 @@
     }
 }
 
+// --- LOGO ---
+.logo-wrap {
+    position: relative;
+    @include flex(row, null, center);
+    .logo-img {
+        position: absolute;
+        bottom: 0px;
+        max-height: 46px;
+        svg {
+            &:nth-child(2) {
+                margin-left: -4px;
+            }
+            &:nth-child(3) {
+                margin-left: -4px;
+            }
+        }
+    }
+    .logo-text {
+        padding-left: 39px;
+        @include font(26px, 600, 20px, $COLOR__DARK-BLUE)
+    }
+}
+
 .btn-watch-video__wrap {
     @include flex(row, null, center);
     a {
@@ -129,10 +152,13 @@
 
 @media screen and (max-width: 500px) {
     .title-text {
-        @include font(30px, 400, 55px, #353637);
+        @include font(30px !important, 400, 55px, #353637);
     }
     .subtitle-text {
         font-size: 15px;
         line-height: 20px;
+    }
+    .overhead {
+        @include font(12px, 400, 16px, #597193);
     }
 }

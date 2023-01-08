@@ -13,35 +13,6 @@
     }
 }
 
-.logo-wrap {
-    position: relative;
-    @include flex(row, null, center);
-    .logo-img {
-        position: absolute;
-        bottom: 0px;
-        max-height: 46px;
-        svg {
-            &:nth-child(2) {
-                margin-left: -4px;
-            }
-            &:nth-child(3) {
-                margin-left: -4px;
-            }
-        }
-        &:hover {
-            svg {
-                &:nth-child(3) {
-                    height: 40px;
-                }
-            }
-        }
-    }
-    .logo-text {
-        padding-left: 39px;
-        @include font(26px, 600, 20px, $COLOR__DARK-BLUE)
-    }
-}
-
 #mobile-menu-open {
     background-color: transparent;
     font-size: 25px;

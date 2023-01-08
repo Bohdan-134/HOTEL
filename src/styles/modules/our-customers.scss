@@ -156,13 +156,17 @@
 @media screen and (max-width: 1000px) {
     .our-customers {
         margin-bottom: 90px;
+        .subtitle-text {
+            margin: 5px 0 20px;
+        }
         .container.container-our-customers__swiper {
             .our-customers-swiper-pagination {
-                bottom: -10px;
+                bottom: -30px;
             }
         }
     }
     .our-customers__swiper {
+        height: 420px;
         .our-customers__swiper-list {
             .our-customers__swiper-item.swiper-slide-active {
                 top: 0px;

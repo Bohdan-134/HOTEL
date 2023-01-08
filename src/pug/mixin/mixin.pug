@@ -23,10 +23,9 @@ mixin ourServicesItem({title, text, srcSvg, className, anchorAos, delayAos})
             p.our-services__item-text= text
             img(src=`../../img/icons/our-services__img${srcSvg}.svg` alt="img")
 
-mixin ourNewsSliderItem(srcImg, title, text)
+mixin ourNewsSliderItem(title, text)
     .swiper-slide.our-news__swiper-item
         .our-news-slide-item__img
-            img(src!=srcImg alt="img")
         .our-news-slide-item__text-content
             ul.our-news-slide-item__info-list
                 .our-news-slide-item__info-item
@@ -70,3 +69,13 @@ mixin aboutUsItem(className, spanPlus, text)
             if spanPlus
                 span.plus +
         p.about-us__text= text
+
+mixin contactItem(imgSrc, imgAlt, hrefSrc, text)
+    li.contact-item
+        img(src!=imgSrc, alt!=imgAlt)
+        a(href!=hrefSrc target="_blank")= text
+
+mixin socialList(hrefSrc, imgSrc, imgAlt)
+    li.social-item
+        a(href!=hrefSrc target="_blank")
+            img(src!=imgSrc, alt!=imgAlt)

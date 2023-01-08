@@ -15,3 +15,25 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .copyright {
+        .container {
+            .copyright-text-left {
+                @include font(15px, 500, 18px, rgba(0, 0, 0, 0.42))
+            }
+            .copyright-text-right {
+                @include font(12px, 400, 14px, rgba(0, 0, 0, 0.42));
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .copyright {
+        padding: 10px 0px;
+        .container {
+            @include flex(column, null, center);
+        }
+    }
+}

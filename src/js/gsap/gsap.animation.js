@@ -1,4 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
+
+const mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 const aboutUsRoom = document.querySelector('.about-us__item .room');
 const aboutUsRestaurant = document.querySelector('.about-us__item .restaurant');
 const aboutUsExceptionalFood = document.querySelector('.about-us__item .exceptional-food');
@@ -15,11 +18,13 @@ function animationGsapCounter(srcElem, toCounter) {
         scrollTrigger: {
             trigger: ".about-us",
             start: "top 70%",
-            end: "300% 70%",
+            end: `${(mobileDevice) ? 'bottom' : '200%'} 70%`,
             scrub: true,
         }
     });
 }
+
+
 
 animationGsapCounter(aboutUsRoom, 302);
 animationGsapCounter(aboutUsRestaurant, 25);

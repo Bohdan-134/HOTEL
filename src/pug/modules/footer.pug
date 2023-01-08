@@ -1,34 +1,26 @@
-footer.footer 
-    .container {
+include ../mixin/mixin.pug
+footer.footer
+    .container(data-aos="fade-up")
         ul.footer-col__list 
-            li.footer-col__item
-                a(href="/").logo-wrap
+            li.footer-col__item(data-aos="fade-up")
+                a(href="/").logo-wrap(data-aos="fade-up")
                     .logo-img
                         include ../../img/logo/logo-img1.svg
                         include ../../img/logo/logo-img2.svg
                         include ../../img/logo/logo-img3.svg
                     .logo-text HOTEL
-                p.footer-text Itawa is a responsive real estate landing page <br> template.Itawa is a  landing page template.Itawa <br> template.
-            li.footer-col__item
-                h5.footer-column__title Contact Us
-                ul.contact-list
-                    li.contact-item
-                        include ../../img/icons/map.svg
-                        span 123 Business Centre London SW1A 1AA
-                    li.contact-item
-                        include ../../img/icons/phone.svg
-                        span +1 0000 000 00
-                    li.contact-item
-                        include ../../img/icons/mail.svg
-                        span info@businessname.com
-            li.footer-col__item
-                h5.footer-column__title Follow Us
-                ul.social-list
-                    li.social-item
-                        include ../../img/icons/facebook.svg
-                    li.social-item
-                        include ../../img/icons/inst.svg
-                    li.social-item
-                        include ../../img/icons/twitter.svg
-                p.footer-text Itawa is a responsive real estate landing page <br> template.Itawa is a  landing page template.Itawa <br> template.
+                p.footer-text(data-aos="fade-up") Itawa is a responsive real estate landing page <br> template.Itawa is a  landing page template.Itawa <br> template.
+            li.footer-col__item(data-aos="fade-up")
+                h5.footer-column__title(data-aos="fade-up") Contact Us
+                ul.contact-list(data-aos="fade-up")
+                    +contactItem('../../img/icons/map.svg', 'map', 'https://goo.gl/maps/GQWhrqvinPKvz4GUA', '123 Business Centre London SW1A 1AA')
+                    +contactItem('../../img/icons/phone.svg', 'phone', 'tel:+1 0000 000 00', '+1 0000 000 00')
+                    +contactItem('../../img/icons/mail.svg', 'mail', 'mailto:info@businessname.com', 'info@businessname.com')
+            li.footer-col__item(data-aos="fade-up")
+                h5.footer-column__title(data-aos="fade-up") Follow Us
+                ul.social-list(data-aos="fade-up")
+                    +socialList('https://www.facebook.com', '../../img/icons/facebook.svg', 'facebook')
+                    +socialList('https://www.instagram.com', '../../img/icons/inst.svg', 'instagram')
+                    +socialList('https://www.twitter.com', '../../img/icons/twitter.svg', 'twitter')
+                p.footer-text(data-aos="fade-up") Itawa is a responsive real estate landing page <br> template.Itawa is a  landing page template.Itawa <br> template.
                     

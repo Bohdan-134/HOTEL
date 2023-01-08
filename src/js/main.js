@@ -17,6 +17,21 @@ btn.forEach(element => {
     })
 })
 
+// sendForm
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+const sendEmailForm = document.getElementById('sendEmail');
+const input = document.getElementById('input-send-mail');
+
+sendEmailForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (isEmailValid(input.value)) return openModal(modalContentErrorHtml.content);
+    else return false
+})
+
+function isEmailValid(value) {
+    return EMAIL_REGEXP.test(value);
+}
+
 // watch video
 const btnPlayVideo = document.querySelectorAll('.btn-play-video');
 

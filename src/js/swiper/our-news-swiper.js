@@ -12,6 +12,9 @@ const swiperOurNews = new Swiper(".our-news__swiper", {
         clickable: true,
     },
     breakpoints: {
+        700: {
+            slidesPerView: 2,
+        },
         1000: {
             slidesPerView: 3,
         }

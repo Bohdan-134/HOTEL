@@ -35,6 +35,16 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .modal-wrap {
+        .modal {
+            iframe {
+                width: 300px;
+            }
+        }
+    }
+}
+
 // --- LOGO ---
 .logo-wrap {
     position: relative;

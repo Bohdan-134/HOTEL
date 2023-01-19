@@ -1,6 +1,6 @@
 # HOTEL
 
-<img src="./hotel.png">
+<img src="./hotel-img.png">
 
 ## Links
 <b>Figma: </b><a href="https://www.figma.com/file/Dy99izLt3rWH9tQjWUN8sB/Hotel-Deal?node-id=0%3A1&t=8WKxqyZJmvlDmTrB-1">HOTEL</a>

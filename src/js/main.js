@@ -4,6 +4,14 @@ import './module/check-form.js'
 import './vanilla/vanilla.js'
 import './gsap/gsap.animation.js'
 
+// navigation menu
+const navigationList = document.querySelectorAll('.header-navigation__item a');
+navigationList.forEach(element => {
+    element.addEventListener('click', (e) => {
+        return e.preventDefault();
+    })
+})
+
 export const modalContentErrorHtml = {
     content: '<div class="modal"><div class="messageForm__wrap"><p class="messageForm__text">Oops! Something went wrong</p></div></div>'
 }

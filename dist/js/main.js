@@ -4,6 +4,7 @@ import'./aos/aos.animation.js'
 import'./module/check-form.js'
 import'./vanilla/vanilla.js'
 import'./gsap/gsap.animation.js'
+const navigationList=document.querySelectorAll('.header-navigation__item a');navigationList.forEach(element=>{element.addEventListener('click',(e)=>{return e.preventDefault();})})
 export const modalContentErrorHtml={content:'<div class="modal"><div class="messageForm__wrap"><p class="messageForm__text">Oops! Something went wrong</p></div></div>'}
 const btn=document.querySelectorAll('.btn');btn.forEach(element=>{element.addEventListener('click',()=>{return openModal(modalContentErrorHtml.content)})})
 const EMAIL_REGEXP=/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;const sendEmailForm=document.getElementById('sendEmail');const input=document.getElementById('input-send-mail');sendEmailForm.addEventListener('submit',(e)=>{e.preventDefault();if(isEmailValid(input.value))return openModal(modalContentErrorHtml.content);else return false})

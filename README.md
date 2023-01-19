@@ -19,3 +19,6 @@
 
 ## Task manager
 - gulp
+
+## Description
+The project was made in Pixel Perfect. There is an adaptation for mobile devices

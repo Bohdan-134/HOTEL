@@ -23,7 +23,7 @@
 .header-navigation {
     @include flex(row, null, center);
     nav {
-        margin-right: 102px;
+        margin-right: 60px;
         .header-navigation__list {
             @include flex(row, null, center);
             .header-navigation__item {
@@ -54,6 +54,10 @@
                 }
             }
         }
+    }
+    .btn {
+        width: auto;
+        padding: 0 15px;
     }
 }
 

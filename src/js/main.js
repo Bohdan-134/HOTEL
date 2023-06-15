@@ -3,6 +3,7 @@ import './aos/aos.animation.js'
 import './module/check-form.js'
 import './vanilla/vanilla.js'
 import './gsap/gsap.animation.js'
+import {swiperInit} from './swiper/registration-login-swiper.js';
 
 // navigation menu
 const navigationList = document.querySelectorAll('.header-navigation__item a');
@@ -17,13 +18,13 @@ export const modalContentErrorHtml = {
 }
 
 // error
-const btn = document.querySelectorAll('.btn');
+// const btn = document.querySelectorAll('.btn');
 
-btn.forEach(element => {
-    element.addEventListener('click', () => {
-        return openModal(modalContentErrorHtml.content)
-    })
-})
+// btn.forEach(element => {
+//     element.addEventListener('click', () => {
+//         return openModal(modalContentErrorHtml.content)
+//     })
+// })
 
 // sendForm
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
@@ -46,6 +47,7 @@ const btnPlayVideo = document.querySelectorAll('.btn-play-video');
 const modalContentHTML = {
     watchVideo: '<div class="modal"><iframe width="700" height="400" src="https://www.youtube.com/embed/2oyvVhq48OA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
     mobileMenu: '<div class="modal" id="mobile-menu"><ul class="mobile-menu__list"><li class="mobile-menu__item"> <a href="#">Home</a></li><li class="mobile-menu__item"> <a href="#">Branch</a></li><li class="mobile-menu__item"> <a href="#">Search</a></li><li class="mobile-menu__item"> <a href="#">About Us</a></li><li class="mobile-menu__item"> <a href="#">Pages</a></li><li class="mobile-menu__item"> <a href="#">Blog</a></li></ul></div>',
+    registration: `<div class="modal modal-registration-login"><div class="modal-registration-login-navigation"><button id="modal-registration" class="modal__button active">Registration</button><button id="modal-login" class="modal__button">Login</button></div><div class="swiper-container swiper-registration"><div class="swiper-wrapper"><div class="swiper-slide"><form class="registration-form"><input type="tel" placeholder="phone"><input type="password" placeholder="password"><button class="registration-form__button">Registration</button></form></div><div class="swiper-slide"><form class="login-form"><input type="tel" placeholder="phone"><input type="password" placeholder="password"><button class="login-form__button">Login</button></form></div></div><div class="swiper-pagination"></div></div></div>`,
 }
 
 btnPlayVideo.forEach(elem => {
@@ -81,3 +83,13 @@ export function closeModal(e) {
 const btnOpenMenu = document.getElementById('mobile-menu-open');
 
 btnOpenMenu.addEventListener('click', () => openModal(modalContentHTML.mobileMenu));
+
+
+// registration user
+
+const btnRegistration = document.getElementById('btn-registration');
+btnRegistration.addEventListener('click', () => {
+    openModal(modalContentHTML.registration);
+    swiperInit();
+})
+

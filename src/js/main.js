@@ -87,18 +87,22 @@ btnOpenMenu.addEventListener('click', () => openModal(modalContentHTML.mobileMen
 
 // registration user
 
-function validatePhoneInput(input) {
+function validatePhoneInput() {
+    const phoneInput = document.querySelector('.ir-phone');
     const phonePattern = /^\d{10}$/; // Паттерн для проверки телефона (10 цифр)
+    const phoneNumber = phoneInput.value.trim();
   
-    const phoneNumber = input.value.trim();
-  
-    if (!phonePattern.test(phoneNumber)) {
-      // Неправильный формат телефона
-      input.classList.add('invalid');
+    if (!phonePattern.test(phoneNumber) || /[a-zA-Z]/.test(phoneNumber)) {
+      if (!phonePattern.test(phoneNumber)) {
+        console.log('Телефонный номер должен состоять из 10 цифр');
+      }
+      if (/[a-zA-Z]/.test(phoneNumber)) {
+        console.log('Пожалуйста, введите только цифры для телефонного номера');
+      }
+      phoneInput.classList.add('invalid');
       return false;
     } else {
-      // Правильный формат телефона
-      input.classList.remove('invalid');
+      phoneInput.classList.remove('invalid');
       return true;
     }
   }
@@ -107,9 +111,12 @@ const btnRegistration = document.getElementById('btn-registration');
 btnRegistration.addEventListener('click', () => {
     openModal(modalContentHTML.registration);
     swiperInit();
-    const phoneInputR = document.querySelector('.ir-phone');
-    phoneInputR.addEventListener('input', function() {
-        validatePhoneInput(phoneInputR);
+    const registrationBtn = document.querySelector('.registration-form__button');
+    registrationBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Отменяем отправку формы
+        if (validatePhoneInput()) {
+          console.log('aboba');
+        }
       });
 })
 

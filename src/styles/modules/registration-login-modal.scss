@@ -53,6 +53,9 @@
                 height: 40px;
                 border: 1px solid $COLOR__DARK-BLUE;
             }
+            input.invalid {
+                border: 1px solid red;
+            }
             button {
                 background-color: $COLOR__DARK-BLUE;
                 margin-top: 20px;

@@ -47,7 +47,7 @@ const btnPlayVideo = document.querySelectorAll('.btn-play-video');
 const modalContentHTML = {
     watchVideo: '<div class="modal"><iframe width="700" height="400" src="https://www.youtube.com/embed/2oyvVhq48OA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
     mobileMenu: '<div class="modal" id="mobile-menu"><ul class="mobile-menu__list"><li class="mobile-menu__item"> <a href="#">Home</a></li><li class="mobile-menu__item"> <a href="#">Branch</a></li><li class="mobile-menu__item"> <a href="#">Search</a></li><li class="mobile-menu__item"> <a href="#">About Us</a></li><li class="mobile-menu__item"> <a href="#">Pages</a></li><li class="mobile-menu__item"> <a href="#">Blog</a></li></ul></div>',
-    registration: `<div class="modal modal-registration-login"><div class="modal-registration-login-navigation"><button id="modal-registration" class="modal__button active">Registration</button><button id="modal-login" class="modal__button">Login</button></div><div class="swiper-container swiper-registration"><div class="swiper-wrapper"><div class="swiper-slide"><form class="registration-form"><input type="tel" placeholder="phone"><input type="password" placeholder="password"><button class="registration-form__button">Registration</button></form></div><div class="swiper-slide"><form class="login-form"><input type="tel" placeholder="phone"><input type="password" placeholder="password"><button class="login-form__button">Login</button></form></div></div><div class="swiper-pagination"></div></div></div>`,
+    registration: `<div class="modal modal-registration-login"><div class="modal-registration-login-navigation"><button id="modal-registration" class="modal__button active">Registration</button><button id="modal-login" class="modal__button">Login</button></div><div class="swiper-container swiper-registration"><div class="swiper-wrapper"><div class="swiper-slide"><form class="registration-form"><input type="tel" placeholder="phone" class="ir-phone"><input type="password" placeholder="password" class="ir-password"><button class="registration-form__button">Registration</button></form></div><div class="swiper-slide"><form class="login-form"><input type="tel" placeholder="phone"><input type="password" placeholder="password"><button class="login-form__button">Login</button></form></div></div><div class="swiper-pagination"></div></div></div>`,
 }
 
 btnPlayVideo.forEach(elem => {
@@ -87,9 +87,29 @@ btnOpenMenu.addEventListener('click', () => openModal(modalContentHTML.mobileMen
 
 // registration user
 
+function validatePhoneInput(input) {
+    const phonePattern = /^\d{10}$/; // Паттерн для проверки телефона (10 цифр)
+  
+    const phoneNumber = input.value.trim();
+  
+    if (!phonePattern.test(phoneNumber)) {
+      // Неправильный формат телефона
+      input.classList.add('invalid');
+      return false;
+    } else {
+      // Правильный формат телефона
+      input.classList.remove('invalid');
+      return true;
+    }
+  }
+
 const btnRegistration = document.getElementById('btn-registration');
 btnRegistration.addEventListener('click', () => {
     openModal(modalContentHTML.registration);
     swiperInit();
+    const phoneInputR = document.querySelector('.ir-phone');
+    phoneInputR.addEventListener('input', function() {
+        validatePhoneInput(phoneInputR);
+      });
 })
 
